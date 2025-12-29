@@ -1,0 +1,33 @@
+PROGRAM Program2;
+(* Bai 2: Tinh tong cac chu so cua mot so nguyen *)
+
+VAR n : INTEGER;
+    sum : INTEGER;
+    digit : INTEGER;
+
+BEGIN
+  (* Nhap so nguyen *)
+  CALL WRITELN;
+  CALL WRITEC('n');
+  CALL WRITEC('=');
+  n := READI;
+  
+  (* Tinh tong cac chu so *)
+  sum := 0;
+  
+  WHILE n > 0 DO
+  BEGIN
+    digit := n - (n / 10) * 10;  (* Lay chu so cuoi cung *)
+    sum := sum + digit;
+    n := n / 10  (* Bo chu so cuoi cung *)
+  END;
+  
+  (* In ket qua *)
+  CALL WRITELN;
+  CALL WRITEC('S');
+  CALL WRITEC('u');
+  CALL WRITEC('m');
+  CALL WRITEC('=');
+  CALL WRITEI(sum);
+  CALL WRITELN
+END.
